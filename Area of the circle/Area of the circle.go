@@ -6,13 +6,13 @@ import (
 )
 
 func main() {
-	var ploch float64
+	var square float64
 	var radius float64
 	fmt.Println("Ввдети площадь круга")
-	fmt.Scanln(&ploch)
-	radius = math.Sqrt(ploch / math.Pi)
-	diametr := radius * 2
-	fmt.Println("Диаметр окружности", diametr)
-	dlina := diametr * math.Pi
-	fmt.Println("Длина окружности", dlina)
+	fmt.Scanln(&square)
+	radius = math.Sqrt(square / math.Pi)
+	Diameter := radius * 2
+	fmt.Println("Диаметр окружности", Diameter)
+	Length := Diameter * math.Pi
+	fmt.Println("Длина окружности", Length)
 }

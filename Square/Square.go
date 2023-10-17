@@ -5,9 +5,9 @@ import (
 )
 
 func main() {
-	var dlina, shirina uint8
+	var length, width uint8
 	fmt.Println("Ввдети длину и ширину")
-	fmt.Scanln(&dlina, &shirina)
-	ploshad := dlina * shirina
-	fmt.Println(ploshad)
+	fmt.Scanln(&length, &width)
+	square := length * width
+	fmt.Println(square)
 }
