@@ -11,14 +11,10 @@ func main() {
 	Mapa := map[int]int{}
 	for {
 		number := Read()
-		numberFub, err := Mapa[number]
-		if !err {
-			numberFub = Search(number)
-			Mapa[number] = numberFub
-			fmt.Println(numberFub)
-		} else {
-			fmt.Println(numberFub)
-		}
+		fmt.Println(Mapa)
+		numberFub := Search(number, Mapa)
+		fmt.Println(numberFub)
+		fmt.Println(Mapa)
 	}
 }
 
@@ -37,10 +33,16 @@ func Read() int {
 	}
 }
 
-func Search(number int) int {
+func Search(number int, Mapa map[int]int) int {
 
 	if number > 2 {
-		return (Search(number-1) + Search(number-2))
+		_, err := Mapa[number]
+		if err {
+			return Mapa[number]
+		} else {
+			Mapa[number] = (Search(number-1, Mapa) + Search(number-2, Mapa))
+			return Mapa[number]
+		}
 	} else {
 		return 1
 	}
