@@ -11,10 +11,8 @@ func main() {
 	Mapa := map[int]int{}
 	for {
 		number := Read()
-		fmt.Println(Mapa)
 		numberFub := Search(number, Mapa)
 		fmt.Println(numberFub)
-		fmt.Println(Mapa)
 	}
 }
 
