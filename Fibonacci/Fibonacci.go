@@ -10,7 +10,7 @@ import (
 func main() {
 	Mapa := map[int]int{}
 	for {
-		number := Read()
+		number := 12
 		numberFub := Search(number, Mapa)
 		fmt.Println(numberFub)
 	}
