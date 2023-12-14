@@ -8,5 +8,5 @@ RUN CGO_ENABLED=0 GOOS=linux go build AreaOfTheCircle.go
 
 
 FROM alpine:3.18.5
-COPY --from=builder /app/AreaOfTheCircle.go .
-CMD ["/main"]
+COPY --from=builder /app/AreaOfTheCircle .
+CMD ["/AreaOfTheCircle"]
