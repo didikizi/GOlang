@@ -1,0 +1,12 @@
+FROM golang:alpine3.17 as builder
+ENV PATH_PROJECT=/app
+ENV GO111MODULE=on
+ENV GOSUMDB=off
+WORKDIR ${PATH_PROJECT}
+COPY . ${PATH_PROJECT}
+RUN CGO_ENABLED=0 GOOS=linux go build AreaOfTheCircle.go
+
+
+FROM alpine:3.18.5
+COPY --from=builder /app/AreaOfTheCircle .
+CMD ["/AreaOfTheCircle"]
